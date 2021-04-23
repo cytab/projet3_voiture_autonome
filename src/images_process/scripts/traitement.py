@@ -96,38 +96,7 @@ rate = 1
 
 
 
-
-'''
-def update_fonc() :
-    global theta 
-    theta.append(ang_cl.x)
-    ax.cla()
-    ax.plot(theta)
-    ax.scatter(len(theta)-1, theta[-1])
-    ax.text(len(theta)-1, theta[-1]+2, "{}%".theta(theta[-1]))
-    ax.set_ylim(0,100)
-''' 
-
-
-'''
-def point(capteur):
-    #capteur 1 et capteur 2
-    s1=len(capteur)-1
-    s2=len(capteur)-1
-
-    for i in range(len(capteur)):
-        if capteur[i]!=0:
-            s1=i
-            break
-
-    if s1!=len(capteur)-1:
-        for i in range(len(capteur)-1, s1-1,-1):
-            if capteur[i]!=0:
-                s2 = i 
-                break
-        return int((s1+s2)/2)
-    return -1
-'''
+##partie inspiré de Tian, D.  (2019).Deeppicar — part 4 : Autonomous lane navigation via opencv.Consult ́e surhttps://towardsdatascience.com/deeppicar-part-4-lane-following-via-opencv-737dd9e47c96
 
 def give_angle(image, average_line):
     global x
@@ -209,6 +178,7 @@ def display_heading_line(image, angle , color = (0,0,255),line_w = 2) :
     heading_image = cv2.addWeighted(image,0.8,heading_image,1,1)
     return heading_image
 
+#partie inspire de Slim, R.  (2020).The complete self-driving car course - applied deep learning.Consult ́e surhttps://www.udemy.com/course/applied-deep-learningtm-the-complete-self-driving-car-course/
 
      
 def make_coordinates(image, line_parameters):
